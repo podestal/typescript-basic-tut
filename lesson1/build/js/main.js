@@ -23,3 +23,47 @@ const sum = (a, b) => {
 let postId;
 let isActive;
 let re = /\w+/g;
+// LESSON 3
+let stringArr = ['one', 'hey', 'Dave'];
+let guitars = ['Strat', 'Les Paul', 5150];
+let mixedData = ['EVH', 1984, true];
+let bands = [];
+bands.push('Van Halen');
+console.log(bands);
+// Tuple
+let myTuple = ['Dave', 42, true];
+let mixed = ['John', 1, false];
+// Object
+let myObj;
+myObj = [];
+myObj = bands;
+myObj = {};
+const exampleObj = {
+    prop1: 'Dave',
+    prop2: true
+};
+let evh = {
+    name: 'Eric',
+    active: true,
+    albuns: [1984, 5150, 'OU812']
+};
+let JP = {
+    name: 'Jimmy',
+    albuns: ['I', 'II', 'IV']
+};
+// evh = JP
+// console.log('evh', evh);
+const greetGuitarist = (guitarist) => {
+    return `Hello ${guitarist.name}`;
+};
+console.log(greetGuitarist(evh));
+// Enums
+var Grade;
+(function (Grade) {
+    Grade[Grade["U"] = 1] = "U";
+    Grade[Grade["D"] = 2] = "D";
+    Grade[Grade["C"] = 3] = "C";
+    Grade[Grade["B"] = 4] = "B";
+    Grade[Grade["A"] = 5] = "A";
+})(Grade || (Grade = {}));
+console.log('Grade', Grade.D);
