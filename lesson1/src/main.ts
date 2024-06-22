@@ -90,7 +90,69 @@ enum Grade {
     A,
 }
 
-console.log('Grade', Grade.D);
+// LESSON 4
 
+// Type Aliases
+type stringOrNumber = string | number
+type stringOrNumberArray = stringOrNumber[]
+
+type GuitaristFull = {
+    name: string,
+    active?: boolean,
+    albuns: stringOrNumberArray
+}
+
+
+// Literal Types
+
+let userName: 'Dave' | 'John' | 'Amy'
+userName = 'Dave'
+
+// Fnxs
+
+const add = (a: number, b: number): number => {
+    return a + b
+}
+
+const logMsg = (message: any): void => {
+    console.log(message)
+    
+}
+
+logMsg('Hello')
+logMsg(add(2, 3))
+
+type mathFunction = (a: number, b: number) => number
+
+// interface mathFunction {(a: number, b: number) : number}
+
+let multiply: mathFunction = (c, d) => {
+    return c*d
+}
+
+logMsg(multiply(2, 2))
+
+const addAll = (a: number, b: number, c?: number): number => {
+    if (c) {
+        return a + b + c
+    }
+    return a + b
+}
+
+logMsg(addAll(5, 7, 1))
+
+// REST Parameters
+
+const total = (...numbs: number[]): number => {
+    return numbs.reduce((prev, curr) => prev + curr)
+}
+
+console.log(total(1, 2, 3, 4));
+
+//  never type
+
+const createError = (errMsg: string): never => {
+    throw new Error(errMsg)
+}
 
 

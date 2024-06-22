@@ -66,4 +66,36 @@ var Grade;
     Grade[Grade["B"] = 4] = "B";
     Grade[Grade["A"] = 5] = "A";
 })(Grade || (Grade = {}));
-console.log('Grade', Grade.D);
+// Literal Types
+let userName;
+userName = 'Dave';
+// Fnxs
+const add = (a, b) => {
+    return a + b;
+};
+const logMsg = (message) => {
+    console.log(message);
+};
+logMsg('Hello');
+logMsg(add(2, 3));
+// interface mathFunction {(a: number, b: number) : number}
+let multiply = (c, d) => {
+    return c * d;
+};
+logMsg(multiply(2, 2));
+const addAll = (a, b, c) => {
+    if (c) {
+        return a + b + c;
+    }
+    return a + b;
+};
+logMsg(addAll(5, 7, 1));
+// REST Parameters
+const total = (...numbs) => {
+    return numbs.reduce((prev, curr) => prev + curr);
+};
+console.log(total(1, 2, 3, 4));
+//  never type
+const createError = (errMsg) => {
+    throw new Error(errMsg);
+};
